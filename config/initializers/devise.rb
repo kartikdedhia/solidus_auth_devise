@@ -39,6 +39,8 @@ Devise.setup do |config|
   # using other encryptors, it sets how many times you want the password re-encrypted.
   config.stretches = 20
   config.encryptor = 'authlogic_sha512'
+  # Make encryptable as false when using bcrypt as the encryptor
+  # config.encryptable = false
 
   # Setup a pepper to generate the encrypted password.
   config.pepper = Rails.configuration.secret_token

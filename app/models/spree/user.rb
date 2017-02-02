@@ -3,8 +3,9 @@ module Spree
     include UserMethods
 
     devise :database_authenticatable, :registerable, :recoverable,
-           :rememberable, :trackable, :validatable, :encryptable
+           :rememberable, :trackable, :validatable
     devise :confirmable if Spree::Auth::Config[:confirmable]
+    devise :encryptable if Spree::Auth::Config[:encryptable]
 
     acts_as_paranoid
     after_destroy :scramble_email_and_password
